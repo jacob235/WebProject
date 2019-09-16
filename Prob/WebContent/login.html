@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content ="width = device-width", initial-scale = "1">
+<title>Login</title>
+<link rel="stylesheet" href="./home.css?after">
+<link rel="stylesheet" href="./login.css?after">
+</head>
+
+<body>
+
+<div id = top1>
+<h1><a href="./home.html" id="title">Game</a></h1>
+	<div id="top_menu">
+		<ul id=top_menu_list>
+			<li>
+				<a class="btn1" id="login" href="./login.html">로그인</a>
+				<a class="btn1" id="user" href="./user.html">회원가입</a>
+			</li>
+		</ul>
+	</div>
+
+<div class="dropdown">
+  <button class="dropbtn"><img id="list" src="./img/list.png"></button>
+  <div class="dropdown-content">
+  <a href="./intro.html"> 게임 소개 </a>
+  <a href="./map.html"> 오시는 길</a>
+  </div>
+</div>
+</div>
+
+<div id="main">
+<h2 align="center">login</h2>
+	<form action="home.html" method="get" >
+		<table border="1">
+			<tr>
+				<td> <label for ="id" > ID </label> </td>
+				<td><input type="text" id="id" name="id" value="" /></td>
+			</tr>
+			<tr>
+				<td> <label for ="pw" > PW </label> </td>
+				<td><input type="password" id="pw" name="pw" value="" /></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+				<input type="submit" value="로그인" class="btn2">
+				<input type="reset" value="취소" class="btn2">
+				<a href="./user.html" class="btn2"> 회원 가입 </a>
+				</td>
+			</tr>	
+		</table>
+	</form>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+
+</body>
+</html>

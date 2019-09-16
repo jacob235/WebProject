@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content ="width = device-width", initial-scale = "1">
+<title>
+회원가입
+</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="./home.css?after">
+<link rel="stylesheet" href="./user.css?after">
+
+<style>
+.error{
+	color : red;
+}
+</style>
+
+</head>
+
+<body>
+<div id = top1>
+<h1><a href="./home.html" id="title">Game</a></h1>
+	<div id="top_menu">
+		<ul id=top_menu_list>
+			<li>
+				<a class="btn1" id="login" href="./login.html">로그인</a>
+				<a class="btn1" id="user" href="./user.html">회원가입</a>
+			</li>
+		</ul>
+	</div>
+
+<div class="dropdown">
+  <button class="dropbtn"><img id="list" src="./img/list.png"></button>
+  <div class="dropdown-content">
+  <a href="./intro.html"> 게임 소개 </a>
+  <a href="./map.html"> 오시는 길</a>
+  </div>
+</div>
+</div>
+<div id="main">
+<h2> 회원가입 </h2>
+	<form action="home.html" method="get">
+	<table border="1">
+	<tr>
+	<td><label for="id"> ID </label></td>
+	<td><input type="text" id="id" name="id" value=""/>
+	<input type="button" value="중복조회" id="id_check" class="btn3"/>
+	<br>
+	<span id="msg1" class="error"></span>
+	</td>
+	</tr>
+	<tr>
+	<td><label for="pw"> PW </label></td>
+	<td colspan = "2"><input type="password" id="pw" name="pw" value=""/></td>
+	</tr>
+	<tr>
+	<td><label for="pw"> NAME </label></td>
+	<td colspan = "2"><input type="text" id="name" name="name" value=""/></td>
+	</tr>
+	<tr>
+	<td><label for="role"> ROLE </label></td>
+	<td colspan = "2">
+	<input type="radio" id="role" name="role" value="admin"/> admin
+	<input type="radio" name="role" value="user"/> user
+	</td>
+	</tr>
+	<tr>
+	<td colspan = "2">
+		<input type="submit" class="btn3" value="회원가입">
+		<input type="reset" class="btn3" value="취소">
+	</td>
+	</tr>
+	</table>
+
+	</form>
+</div>
+
+<script>
+const log = console.log;
+let xdata;
+
+$(function(){
+	$('#id_check').click(function(){
+		idcheck();
+	});
+});
+
+
+function idcheck() {
+	$.ajax({
+		url:'json/id_check.jsp',
+		dataType:'json',
+		data:{
+			id:$('#id').val()
+		},
+		success:function(data){
+			/* xdata = data;
+			alert("success  " + data.id); */
+			if(data.id == undefined){
+				$('#msg1').html("사용가능한 ID 입니다.")
+			} else{
+				$('#msg1').html('사용 중인 ID 입니다.')
+			}
+		},
+		error:function(e){
+			alert("error   " + e);
+		}
+	});	
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>

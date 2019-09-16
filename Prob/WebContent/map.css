@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+#main{
+	margin : 0 auto;
+	width : 80%;
+	height: 600px;
+	position: relative;
+	top : 50px;
+}
+
+#main_left {
+	position : absolute;
+	width: 50%;
+	height : 600px;
+	left : 2px;
+	padding : 15px;
+
+}
+#main_right {
+	position : absolute;
+	width: 50%;
+	height : 600px;
+	right : 2px;
+}
+h2{
+	font-weight: bold;
+}
+#map {
+	width: 500px;
+	height: 500px;
+	margin: 0 auto;
+}
